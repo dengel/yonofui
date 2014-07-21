@@ -3,11 +3,11 @@ var app = express();
 app.use(express.logger());
 
 app.get('/', function(request, response) {
-  response.send('Hello World!');
+  response.send('Yo no fui!');
 });
 
-var port = process.env.OPENSHIFT_NODEJS_PORT || 8088;
-var ip = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';
+var port = process.env.OPENSHIFT_NODEJS_PORT || process.env.OPENSHIFT_INTERNAL_PORT || 8080;
+var ip = process.env.OPENSHIFT_NODEJS_IP || process.env.OPENSHIFT_INTERNAL_IP || '127.0.0.1';
 
 app.listen(port, ip, function() {
   console.log("Listening on " + port);
