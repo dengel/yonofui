@@ -1,8 +1,8 @@
 {
   "name": "node-js-sample",
   "version": "0.0.3",
-  "description": "a sample node.js app for heroku",
-  "main": "web.js",
+  "description": "a sample node.js app",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
