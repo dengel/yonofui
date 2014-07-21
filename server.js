@@ -6,12 +6,9 @@ app.get('/', function(request, response) {
   response.send('Hello World!');
 });
 
-var port = process.env.OPENSHIFT_NODEJS_PORT || 8080;
+var port = process.env.OPENSHIFT_NODEJS_PORT || 8088;
 var ip = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';
 
-app.set('ipaddr', ip)
-app.set('port', port)
-
-app.listen(port, function() {
+app.listen(port, ip, function() {
   console.log("Listening on " + port);
 });
